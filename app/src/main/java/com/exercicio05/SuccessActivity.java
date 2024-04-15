@@ -1,0 +1,32 @@
+package com.exercicio05;
+
+import android.os.Bundle;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class SuccessActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_success);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.sucesso), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        TextView successMessageTextView = findViewById(R.id.successMessageTextView);
+
+        int numTentativas = getIntent().getIntExtra("numTentativas", 0);
+
+        String successMessage = "Parabéns! Você descobriu o código secreto em " + numTentativas + " tentativas!";
+        successMessageTextView.setText(successMessage);
+    }
+}

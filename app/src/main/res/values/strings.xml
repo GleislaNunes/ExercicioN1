@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name" translatable="false">Exercicio05</string>
+
+    <string name="rock" translatable="false">Pedra</string>
+    <string name="paper" translatable="false">Papel</string>
+    <string name="scissors" translatable="false">Tesoura</string>
+    <string name="win" translatable="false">Você venceu!</string>
+    <string name="loss" translatable="false">Você perdeu!</string>
+    <string name="draw" translatable="false">Empate!</string>
+    <string name="player_choice" translatable="false">Escolha do Jogador</string>
+    <string name="computer_choice" translatable="false">Escolha da IA</string>
+
+</resources>
